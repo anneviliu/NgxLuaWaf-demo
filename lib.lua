@@ -1,6 +1,5 @@
 --waf core lib
 
-
 --Get the client ip
 function get_client_ip()
     CLIENT_IP = ngx.req.get_headers()["X_real_ip"]
@@ -25,24 +24,9 @@ function get_user_agent()
     return USER_AGENT
 end
 
---Get waf rule
-function get_rule(rulefilename)
-    local io = require 'io'
-    local RULE_PATH = config_rule_dir
-    local RULE_FILE = io.open(RULE_PATH..'/'..rulefilename,"r")
-    if RULE_FILE == nil then
-        return
-    end
-    RULE_TABLE = {}
-    for line in RULE_FILE:lines() do
-        table.insert(RULE_TABLE,line)
-    end
-    RULE_FILE:close()
-    return(RULE_TABLE)
-end
-
---waf log record for json
-function log_record(method,url,data,ruletag)
+ 
+--waf log record for cjson
+function log_record(method,url,data,attacktype)
     local cjson = require("cjson")
     local io = require 'io'
     local LOG_PATH = config_log_dir
@@ -58,7 +42,7 @@ function log_record(method,url,data,ruletag)
                  attack_method = method,
                  req_url = url,
                  req_data = data,
-                 rule_tag = ruletag,
+                 attack_type =attacktype,
               }
     local LOG_LINE = cjson.encode(log_json_obj)
     local LOG_NAME = LOG_PATH..'/'..ngx.today().."_waf.log"
@@ -73,6 +57,16 @@ end
 
 --waf return 
 function waf_output()
+    if config_waf_output == "redirect" then
+        ngx.redirect(config_redirect_url, 301)
+    else
+        ngx.header.content_type = "text/html"
+        ngx.status = ngx.HTTP_FORBIDDEN
+        ngx.say(config_output_html)
+        ngx.exit(ngx.status)
+    end
+end
+
 
 
 
