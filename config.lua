@@ -28,6 +28,8 @@ config_ua_safe_check = "on"
 --CC Attack Defense status
 config_cc_defense = "on"
 
+config_waf_output = "html"
+
 -- If waf detect dangerous request, redirect utl.
 config_redirect_url = "/warning.html"
 
