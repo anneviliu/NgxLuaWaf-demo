@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
    <el-menu router="true" :default-active="this.$router.path" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color=rgb(255,255,255)>
       <el-menu-item index="/" ><i class="el-icon-s-operation"></i>控制面板</el-menu-item>
       <el-menu-item index="/about" ><i class="el-icon-s-custom"></i>关于我们</el-menu-item>
@@ -11,6 +12,21 @@
         <el-menu :default-openeds="['1', '3']">
           <el-menu-item-group>
             <el-button type="primary" plain size="small" style="width:100px" >waf总开关</el-button>
+=======
+
+    <el-menu router="true" :default-active="this.$router.path" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color=rgb(255,255,255)>
+      <el-menu-item index="/" >Home</el-menu-item>
+      <el-menu-item index="/about">about</el-menu-item>
+    </el-menu>
+
+    <el-container style="height: 800px; border: 1px solid #eee">
+      <el-aside width="200px" style="background-color: rgb(255,255,255)">
+        <el-menu :default-openeds="['1', '3']">
+
+          <template slot="title"><i class="el-icon-message"></i>导航一</template>
+          <el-menu-item-group>
+            <el-tag type="succes" :data="s1" style="width:100px">总开关</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style=""
               v-model="value2"
@@ -26,7 +42,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
             <el-button type="primary" plain size="small" style="width:100px" >URL白名单</el-button>
+=======
+            <el-tag type="succes" style="width:100px">url白名单</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value3"
@@ -40,7 +60,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
             <el-button type="primary" plain size="small" style="width:100px" >URL过滤</el-button>
+=======
+            <el-tag type="succes" style="width:100px">url过滤</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value4"
@@ -54,8 +78,13 @@
 
 
           <br></br>
+<<<<<<< HEAD
           <el-menu-item-group>  
               <el-button type="primary" plain size="small" style="width:100px" @click.native="GoIpControl()">ip黑名单</el-button>
+=======
+          <el-menu-item-group>
+            <el-tag type="succes" style="width:100px">ip黑名单</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value5"
@@ -69,7 +98,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
               <el-button type="primary" plain size="small" style="width:100px" >ip白名单</el-button>
+=======
+            <el-tag type="succes" style="width:100px">ip白名单</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value11"
@@ -84,7 +117,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
             <el-button type="primary" plain size="small" style="width:100px" >GET过滤</el-button>
+=======
+            <el-tag type="succes" style="width:100px">GET参数过滤</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value6"
@@ -99,7 +136,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
             <el-button type="primary" plain size="small" style="width:100px" >POST过滤</el-button>
+=======
+            <el-tag type="succes" style="width:100px">POST参数过滤</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value7"
@@ -113,7 +154,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
             <el-button type="primary" plain size="small" style="width:100px" >Cookie过滤</el-button>
+=======
+            <el-tag type="succes" style="width:100px">Cookie检查</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value8"
@@ -127,7 +172,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
             <el-button type="primary" plain size="small" style="width:100px" >UA过滤</el-button>
+=======
+            <el-tag type="succes" style="width:100px">UA检查</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value9"
@@ -141,7 +190,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
             <el-button type="primary" plain size="small" style="width:100px" >CC攻击防御</el-button>
+=======
+            <el-tag type="succes" style="width:100px">CC攻击防御</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value10"
@@ -156,6 +209,7 @@
         </el-menu>
       </el-aside>
       <el-main>
+<<<<<<< HEAD
         <img style="width:20%" src="../assets/logo.png">
 <br></br>
 <br></br>
@@ -167,16 +221,39 @@
             <el-select v-model="formInline.type" placeholder="type">
               <el-option label="ip_blacklist" value="ip_blacklist"></el-option>
               <el-option label="ip_whitelist" value="ip_whitelist"></el-option>
+=======
+        <br></br>
+        <br></br>
+        <img src="../assets/logo.png">
+        <br></br>
+        <br></br>
+
+        <el-form :inline="true" :model="formInline" class="demo-form-inline">
+          <el-form-item label="ip">
+            <el-input v-model="formInline.ip" placeholder="ip"></el-input>
+          </el-form-item>
+          <el-form-item label="type">
+            <el-select v-model="formInline.type" placeholder="type">
+              <el-option label="ip_blacklist" value="ip_blacklist"></el-option>
+              <el-option label="ip_whitelist" value="ip_whitelist"></el-option>
+              <el-option label="ip_blacklist_remove" value="ip_blacklist_remove"></el-option>
+              <el-option label="ip_whitelist_remove" value="ip_whitelist_remove"></el-option>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             </el-select>
           </el-form-item>
 
             <el-form-item>
                 <template>
+<<<<<<< HEAD
                 <el-button :plain="true" @click.native="submit">submit</el-button>
+=======
+                <el-button :plain="true" @click.native="submit()">submit</el-button>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
                 </template>
 
             </el-form-item>
         </el-form>
+<<<<<<< HEAD
 <template>
   <el-table
     :data="tabledata"
@@ -218,6 +295,9 @@
     
   </el-table>
 </template>
+=======
+        
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
       </el-main>
     </el-container>
 
@@ -233,7 +313,10 @@
     name : "Home",
     created(){
        this.GET_DATA();
+<<<<<<< HEAD
        this.GET_table_data()
+=======
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
      },
     data () {
       return {
@@ -251,6 +334,7 @@
         formInline: {
           ip: '',
           type: ''
+<<<<<<< HEAD
             },
             tabledata:[],
         }
@@ -273,6 +357,14 @@
       },
        GET_DATA(){
          this.$axios.get(config.switch_URL).then(res => {
+=======
+            }
+        }
+    },
+    methods: {
+       GET_DATA(){
+         this.$axios.get("http://192.168.2.219/switch_api").then(res => {
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
            var result1 = res.data;
 
             if (result1.waf_status == "true")
@@ -355,20 +447,36 @@
            {
              this.value10 = false
            }
+<<<<<<< HEAD
+=======
+
+
+        //       this.$message({
+        //      message: "server:"+result1.waf_status+" switch:"+ this.value2,
+        //      type: 'success'
+        //    });
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
          })
 
 
        },
 
+<<<<<<< HEAD
       submit: function () {
         var sub = {ip:this.formInline.ip, type: this.formInline.type}
         this.$axios.post(config.ip_baseURL,this.$qs.stringify(sub)
+=======
+      submit () {
+        var sub = {ip:this.formInline.ip, type: this.formInline.type}
+        this.$axios.post("http://192.168.2.219/api",this.$qs.stringify(sub)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var result = res.data;
           this.$message({
             message: result,
             type: 'success'
           });
+<<<<<<< HEAD
           this.GET_table_data()
         });
       },
@@ -387,11 +495,19 @@
         });
 
       },
+=======
+        });
+      },
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
 
       waf_status () {
         // Common.value2 = this.value2
         var control1 = {moudle:"waf_status", status: this.value2}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control1)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control1)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res1 = res.data;
           this.$message({
@@ -403,7 +519,11 @@
 
       url_whitelist(){
          var control2 = {moudle:"url_whitelist", status: this.value3}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control2)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control2)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res2 = res.data;
           this.$message({
@@ -415,7 +535,11 @@
 
       url_filter(){
         var control3 = {moudle:"url_filter", status: this.value4}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control3)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control3)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res3 = res.data;
           this.$message({
@@ -427,7 +551,11 @@
 
       ip_blacklist(){
         var control4 = {moudle:"ip_blacklist", status: this.value5}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control4)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control4)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res4 = res.data;
           this.$message({
@@ -439,7 +567,11 @@
 
       get_args_check(){
         var control5 = {moudle:"get_args_check", status: this.value6}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control5)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control5)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res5 = res.data;
           this.$message({
@@ -451,7 +583,11 @@
 
       post_args_check(){
         var control6 = {moudle:"post_args_check", status: this.value7}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control6)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control6)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res6 = res.data;
           this.$message({
@@ -463,7 +599,11 @@
 
       cookie_safe_check(){
         var control7 = {moudle:"cookie_safe_check", status: this.value8}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control7)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control7)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res7 = res.data;
           this.$message({
@@ -475,7 +615,11 @@
 
       ua_safe_check(){
         var control8 = {moudle:"ua_safe_check", status: this.value9}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control8)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control8)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res8 = res.data;
           this.$message({
@@ -487,7 +631,11 @@
 
       cc_defense(){
         var control9 = {moudle:"cc_defense", status: this.value10}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control9)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control9)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res9 = res.data;
           this.$message({
@@ -500,7 +648,11 @@
 
       ip_whitelist(){
         var control10 = {moudle:"ip_whitelist", status: this.value11}
+<<<<<<< HEAD
         this.$axios.post(config.switch_URL,this.$qs.stringify(control10)
+=======
+        this.$axios.post("http://192.168.2.219/switch_api",this.$qs.stringify(control10)
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         ).then(res => {
           var res10 = res.data;
           this.$message({
@@ -509,6 +661,12 @@
           });
         });
       },
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
       }
     }
 

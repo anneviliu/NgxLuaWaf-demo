@@ -24,7 +24,11 @@
                                     </el-form-item>
 
                                     <el-form-item label="邀请码">
+<<<<<<< HEAD
                                         <el-input v-model="regForm.inviteCode" @keyup.enter.native="onReg"></el-input>
+=======
+                                        <el-input v-model="regForm.inviteCode"></el-input>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
                                     </el-form-item>
 
                                     <div class="button-right">

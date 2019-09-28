@@ -6,21 +6,35 @@
                     <el-container>
                         <el-main>
                             <el-card shadow="always">
+<<<<<<< HEAD
                                 <img style="width:20%; position: relative; left:40%" src="../assets/logo.png">
                                 <h2 style="text-align:center;">登录</h2>
           
+=======
+
+                                <h2>登录</h2>
+
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
                                 <el-form ref="form" :model="loginForm" label-width="80px">
                                     <el-form-item label="用户名">
                                         <el-input v-model="loginForm.username"></el-input>
                                     </el-form-item>
 
                                     <el-form-item label="密码">
+<<<<<<< HEAD
                                         <el-input show-password v-model="loginForm.password" @keyup.enter.native="onLogin"></el-input>
+=======
+                                        <el-input show-password v-model="loginForm.password"></el-input>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
                                     </el-form-item>
                                 </el-form>
 
                                 <div class="button-right">
+<<<<<<< HEAD
                                     <el-button type="primary" round @click="onLogin" >登录</el-button>
+=======
+                                    <el-button type="primary" round @click="onLogin">登录</el-button>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
                                     <el-button round @click="onReg">注册</el-button>
                                 </div>
                             </el-card>
@@ -51,6 +65,10 @@ import { log } from 'util'
                 }
             }
         },
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         mounted() {
         },
 
@@ -78,6 +96,7 @@ import { log } from 'util'
                             }
                         });
                     }
+<<<<<<< HEAD
                     else if(log_result.message === "用户名或密码错误")
                     {
                         this.$message.error('用户名或密码错误');
@@ -86,6 +105,8 @@ import { log } from 'util'
                     {
                         this.$message.error('用户名或密码为空');
                     }
+=======
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
                 })
             }
         }
