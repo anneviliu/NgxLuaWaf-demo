@@ -17,6 +17,8 @@ local moudle_status = {
     ["url_whitelist"] = config_url_whitelist,
     ["url_filter"] = config_url_filter,
     ["ip_blacklist"] = config_ip_blacklist,
+    ["ip_whitelist"] = config_ip_whitelist,
+
     ["get_args_check"] = config_get_args_check,
     ["post_args_check"] = config_post_args_check,
     ["cookie_safe_check"] = config_cookie_safe_check,
@@ -28,16 +30,15 @@ local moudle_status = {
     ["dangerous_log"] = config_dangerous_log
 }
 
+-- for key, value in pairs(moudle_status) do 
+--     insert ,err = red:set(key,value)
+-- end
+
 -- 接收前端post请求，将各功能状态存入redis
+
 if ngx.var.request_method == "POST" then
     local moudle = ngx.req.get_post_args()["moudle"]
     local status = ngx.req.get_post_args()["status"]
-
-    msg_success_obj = {["ip"] = ip, ["message"] = "success", ["type"] = moudle}
-
-    msg_failed_obj = {["ip"] = ip, ["message"] = "failed", ["type"] = moudle}
-
-    msg_empty_obj = {["ip"] = ip, ["message"] = "empty", ["type"] = moudle}
 
     if moudle and status then
         for key in pairs(moudle_status) do
@@ -50,6 +51,29 @@ if ngx.var.request_method == "POST" then
             end
         end
     end
+
+    res, err = red:get(moudle)
+
+    msg_success_obj = {
+        ["ip"] = ip,
+        ["message"] = "success",
+        ["type"] = moudle,
+        ["status"] = res
+    }
+
+    msg_failed_obj = {
+        ["ip"] = ip,
+        ["message"] = "failed",
+        ["type"] = moudle,
+        ["status"] = res
+    }
+
+    msg_empty_obj = {
+        ["ip"] = ip,
+        ["message"] = "empty",
+        ["type"] = moudle,
+        ["status"] = res
+    }
 
     if flag == 1 then
         ngx.say(cjson.encode(msg_success_obj))
@@ -67,4 +91,3 @@ if ngx.var.request_method == "GET" then
     end
     ngx.say(cjson.encode(moudle_status_table))
 end
-
