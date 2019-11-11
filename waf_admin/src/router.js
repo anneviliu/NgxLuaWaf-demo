@@ -41,6 +41,18 @@ const router = new Router({
               }
         },
 
+<<<<<<< HEAD
+        {
+            path: '/about',
+            name: 'about',
+            component: () => import('@/views/about.vue'),
+            meta: {
+                isLogin: true
+              }
+        },
+
+=======
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
     ]
 })
 

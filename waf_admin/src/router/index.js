@@ -54,7 +54,12 @@ router.beforeEach((to, from, next) => {
             })
         }
         next()
+<<<<<<< HEAD
+    }
+    else if(token === btoa(username))
+=======
     }else if(token === btoa(username))
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
     {
         // Is login
         if(to.name === 'login' || to.name === 'register'){

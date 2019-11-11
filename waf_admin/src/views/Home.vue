@@ -1,6 +1,19 @@
 <template>
   <div id="app">
     <el-menu router="true" :default-active="this.$router.path" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color=rgb(255,255,255)>
+<<<<<<< HEAD
+      <!-- <el-menu-item @click="drawer = true"><i class="el-icon-s-operation"></i>控制面板</el-menu-item> -->
+      <el-menu-item index="/" ><i class="el-icon-s-operation"></i>控制面板</el-menu-item>
+      <el-menu-item index="/about" ><i class="el-icon-s-custom"></i>关于我们</el-menu-item>
+      <el-menu-item @click="onLogout" style=""><i class="el-icon-switch-button"></i>登出</el-menu-item>
+        <el-link type="info" style="position: relative; right: -32%; top: 20%;font-size: 30px"><i class="el-icon-user"></i>{{username}}</el-link>
+    </el-menu>
+    <el-container style="height: 900px; border: 1px solid #eee">
+      <el-aside width="10%" style="background-color: rgb(255,255,255);">
+        <el-menu :default-openeds="['1', '3']">
+          <el-menu-item-group>
+            <el-button type="primary" plain size="small" style="width:100px" >waf总开关</el-button>
+=======
       <el-menu-item index="/" >Home</el-menu-item>
       <el-menu-item index="/about" >about</el-menu-item>
     </el-menu>
@@ -12,6 +25,7 @@
           <template slot="title"><i class="el-icon-message"></i>导航一</template>
           <el-menu-item-group>
             <el-tag type="succes" :data="s1" style="width:100px">总开关</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style=""
               v-model="value2"
@@ -27,7 +41,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
+            <el-button type="primary" plain size="small" style="width:100px" >URL白名单</el-button>
+=======
             <el-tag type="succes" style="width:100px">url白名单</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value3"
@@ -41,7 +59,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
+            <el-button type="primary" plain size="small" style="width:100px" >URL过滤</el-button>
+=======
             <el-tag type="succes" style="width:100px">url过滤</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value4"
@@ -55,8 +77,13 @@
 
 
           <br></br>
+<<<<<<< HEAD
+          <el-menu-item-group>  
+              <el-button type="primary" plain size="small" style="width:100px" @click.native="GoIpControl()">ip黑名单</el-button>
+=======
           <el-menu-item-group>
             <el-tag type="succes" style="width:100px" @click.native="GoIpControl()">ip黑名单</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value5"
@@ -70,7 +97,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
+              <el-button type="primary" plain size="small" style="width:100px" >ip白名单</el-button>
+=======
             <el-tag type="succes" style="width:100px">ip白名单</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value11"
@@ -85,7 +116,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
+            <el-button type="primary" plain size="small" style="width:100px" >GET过滤</el-button>
+=======
             <el-tag type="succes" style="width:100px">GET参数过滤</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value6"
@@ -100,7 +135,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
+            <el-button type="primary" plain size="small" style="width:100px" >POST过滤</el-button>
+=======
             <el-tag type="succes" style="width:100px">POST参数过滤</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value7"
@@ -114,7 +153,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
+            <el-button type="primary" plain size="small" style="width:100px" >Cookie过滤</el-button>
+=======
             <el-tag type="succes" style="width:100px">Cookie检查</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value8"
@@ -128,7 +171,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
+            <el-button type="primary" plain size="small" style="width:100px" >UA过滤</el-button>
+=======
             <el-tag type="succes" style="width:100px">UA检查</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value9"
@@ -142,7 +189,11 @@
 
           <br></br>
           <el-menu-item-group>
+<<<<<<< HEAD
+            <el-button type="primary" plain size="small" style="width:100px" >CC攻击防御</el-button>
+=======
             <el-tag type="succes" style="width:100px">CC攻击防御</el-tag>
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
             <el-switch
               style="display: "
               v-model="value10"
@@ -153,6 +204,24 @@
               @change=cc_defense()>
             </el-switch>
           </el-menu-item-group>
+<<<<<<< HEAD
+        </el-menu>
+      </el-aside>
+
+      <el-main style="position: relative; top: 0%">
+        <img style="width:20%" src="../assets/logo.png">
+ 
+        <h1 >欢迎你～ {{username}}</h1>
+        <el-card class="box-card" style="width: 50%; height:30% ;position: relative; left: 25% ">
+        <div slot="header" class="clearfix">
+          <span>服务器状态检测</span>
+          <!-- <el-button style="float: right; padding: 3px 0" type="text"></el-button> -->
+        </div>
+        <div v-for="o in 4" :key="o" class="text item">
+          {{'待添加 ' + o }}
+        </div>
+</el-card>
+=======
 
         </el-menu>
       </el-aside>
@@ -179,6 +248,7 @@
 
         </el-form> -->
 
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
       </el-main>
     </el-container>
 
@@ -195,8 +265,24 @@
     created(){
        this.GET_DATA();
      },
+<<<<<<< HEAD
+     watch:{
+  "$route":function(to,from){
+      //from 对象中包含当前地址
+      //to 对象中包含目标地址
+      //其实还有一个next参数的，这个参数是控制路由是否跳转的，如果没写，可以不用写next()来代表允许路由跳转，如果写了就必须写next(),否则路由是不会生效的。
+      
+    }
+  },
     data () {
       return {
+        drawer: false,
+        direction: 'ltr',
+        username: localStorage.getItem('username'),
+=======
+    data () {
+      return {
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
         // value2: Common.value2,
         value2: false,
         value3: false,
@@ -299,6 +385,9 @@
            {
              this.value10 = false
            }
+<<<<<<< HEAD
+         })
+=======
 
 
         //       this.$message({
@@ -308,6 +397,7 @@
          })
 
 
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
        },
 
       waf_status () {
@@ -433,14 +523,31 @@
       },
       GoIpControl(){
            this.$router.replace({path: '/ip'})
+<<<<<<< HEAD
+           //this.$router.push('/')
+=======
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
       },
 
       GoBackHome(){
           this.$router.replace({path: '/'})
+<<<<<<< HEAD
+      },
+       onLogout: function(){
+          localStorage.removeItem('token')
+          localStorage.removeItem('username')
+          this.$router.replace({
+                                path: '/login',
+                            })
+      }
+  }
+}
+=======
       }
 
       }
     }
+>>>>>>> 2e4034207e64312ac2f3fa69eae323355411dbcf
 
 
 </script>
