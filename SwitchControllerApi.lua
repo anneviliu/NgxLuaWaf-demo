@@ -18,7 +18,7 @@ local moudle_status = {
     ["url_filter"] = config_url_filter,
     ["ip_blacklist"] = config_ip_blacklist,
     ["ip_whitelist"] = config_ip_whitelist,
-
+    ["pass_proxy"] = config_pass_proxy,
     ["get_args_check"] = config_get_args_check,
     ["post_args_check"] = config_post_args_check,
     ["cookie_safe_check"] = config_cookie_safe_check,

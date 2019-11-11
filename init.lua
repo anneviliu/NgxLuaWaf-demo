@@ -16,6 +16,7 @@ function waf_modle_status_init()
 
     local moudle_status = {
         ["waf_status"] = config_waf_status,
+        ["pass_proxy"] = config_pass_proxy,
         ["url_whitelist"] = config_url_whitelist,
         ["url_filter"] = config_url_filter,
         ["ip_blacklist"] = config_ip_blacklist,

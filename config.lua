@@ -1,3 +1,4 @@
+
 -- waf config file, to setting moudle enable='on'  disable='off'
 ---------------------------------------------------------------------
 -- waf status
@@ -14,6 +15,9 @@ config_ip_blacklist = false
 
 -- ip_whitelist status
 config_ip_whitelist = false
+
+-- passproxy status
+config_pass_proxy = false
 
 -- get_args_check status
 config_get_args_check = false
